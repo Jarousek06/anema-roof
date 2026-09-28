@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ANEMA ROOF — Jiskrové a jehlové zkoušky plochých střech</title>
+<meta name="description" content="Přesná kontrola těsnosti hydroizolace plochých střech. Jiskrová a jehlová zkouška, označení netěsností, lokální oprava a přehledný protokol pro správu objektu.">
+<meta name="theme-color" content="#0A0B0D">
+
+<!-- TODO: až bude známá ostrá doména, přepsat všechny absolutní URL níž -->
+<link rel="canonical" href="https://www.anema.cz/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="ANEMA ROOF">
+<meta property="og:url" content="https://www.anema.cz/">
+<meta property="og:title" content="ANEMA ROOF — Jiskrové a jehlové zkoušky plochých střech">
+<meta property="og:description" content="Odhalíme poruchu dřív, než z ní vznikne drahá oprava. Kontrola těsnosti hydroizolace, označení netěsností a ověřená oprava.">
+<meta property="og:image" content="https://www.anema.cz/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero-1800.webp" imagesrcset="assets/img/hero-1000.webp 1000w, assets/img/hero-1800.webp 1800w" imagesizes="100vw">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Přejít na obsah</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#hero" aria-label="ANEMA ROOF — domů">
+      <img src="assets/img/logo-nav.webp" width="534" height="346" alt="ANEMA ROOF">
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Hlavní navigace">
+      <a href="#problem">Proč kontrolovat</a>
+      <a href="#metody">Metody</a>
+      <a href="#postup">Postup</a>
+      <a href="#kdy">Kdy kontrolovat</a>
+      <a href="#faq">Časté dotazy</a>
+      <a class="nav__phone" href="tel:+420773938959">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        773 938 959
+      </a>
+      <a class="nav__cta" href="#kontakt">Nezávazná poptávka</a>
+    </nav>
+
+    <button class="nav__burger" id="navBurger" aria-expanded="false" aria-controls="navLinks" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobilní akční lišta -->
+<div class="actionbar" id="actionbar">
+  <a class="actionbar__btn actionbar__btn--call" href="tel:+420773938959">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Zavolat
+  </a>
+  <a class="actionbar__btn actionbar__btn--form" href="#kontakt">
+    Poptávka
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="stroke"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <picture>
+      <source media="(max-width:820px)" srcset="assets/img/hero-1000.webp">
+      <img src="assets/img/hero-1800.webp" width="1800" height="1013"
+           alt="Technici ANEMA ROOF provádějí jiskrovou zkoušku na ploché střeše" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <canvas class="hero__fx" id="fx" aria-hidden="true"></canvas>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="hero__content wrap">
+    <p class="eyebrow reveal" data-d="0">
+      <span class="eyebrow__spark" aria-hidden="true"></span>
+      Jiskrové a jehlové zkoušky plochých střech
+    </p>
+
+    <h1 class="hero__title">
+      <span class="line reveal" data-d="1">Odhalíme poruchu dřív,</span>
+      <span class="line reveal" data-d="2">než z ní vznikne <em>drahá oprava.</em></span>
+    </h1>
+
+    <p class="hero__lead reveal" data-d="3">
+      Přesná kontrola hydroizolace, označení netěsností, lokální oprava
+      a přehledný výstup pro správu objektu.
+    </p>
+
+    <div class="hero__actions reveal" data-d="4">
+      <a class="btn btn--primary" href="#kontakt">
+        Chci kontrolu střechy
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#metody">Jak zkouška probíhá</a>
+    </div>
+
+    <ul class="hero__tags reveal" data-d="5">
+      <li>Nové střechy</li>
+      <li>Rekonstrukce</li>
+      <li>Stávající provozy</li>
+    </ul>
+  </div>
+
+  <a class="hero__cue" href="#problem" aria-label="Posunout dolů">
+    <span class="hero__cue-line" aria-hidden="true"></span>
+    <span class="hero__cue-text">Scroll</span>
+  </a>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="section problem" id="problem">
+  <div class="wrap problem__grid">
+
+    <div class="problem__copy">
+      <p class="eyebrow reveal"><span class="eyebrow__spark" aria-hidden="true"></span>Proč střechu kontrolovat včas</p>
+      <h2 class="h2 reveal">Malá dírka dnes může později znamenat <em>opravu za miliony.</em></h2>
+      <p class="lead reveal">
+        Stačí malá dírka ve střešní fólii a voda se dostane dovnitř střechy. Dlouho nemusí být nic vidět.
+        Když se problém neřeší, voda postupně poškozuje izolaci, konstrukci i vnitřní prostory.
+      </p>
+
+      <ol class="cascade" role="list">
+        <li class="cascade__item reveal">
+          <span class="cascade__num">01</span>
+          <span class="cascade__text">Mokrá a nefunkční tepelná izolace</span>
+        </li>
+        <li class="cascade__item reveal">
+          <span class="cascade__num">02</span>
+          <span class="cascade__text">Poškozené stropy, vybavení a provoz</span>
+        </li>
+        <li class="cascade__item reveal">
+          <span class="cascade__num">03</span>
+          <span class="cascade__text">V konečné fázi oprava za statisíce až miliony</span>
+        </li>
+      </ol>
+
+      <p class="note reveal">Včasná kontrola může zabránit rozsáhlé opravě.</p>
+    </div>
+
+    <figure class="problem__figure reveal" data-parallax="0.06">
+      <div class="frame">
+        <img src="assets/img/leak-1400.webp" srcset="assets/img/leak-800.webp 800w, assets/img/leak-1400.webp 1400w"
+             sizes="(max-width:900px) 92vw, 46vw" width="1400" height="787" loading="lazy" decoding="async"
+             alt="Zatékání do interiéru budovy — voda stékající po sloupu a poškozený podhled">
+        <span class="frame__edge" aria-hidden="true"></span>
+      </div>
+      <figcaption>Ilustrační vizualizace možného následku zatékání</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ================= METHODS ================= -->
+<section class="section methods" id="metody">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal"><span class="eyebrow__spark" aria-hidden="true"></span>Dvě doplňující se metody</p>
+      <h2 class="h2 reveal">Jiskrová a jehlová zkouška kontrolují <em>jiný typ rizika.</em></h2>
+    </header>
+
+    <div class="methods__grid">
+
+      <article class="card tilt reveal">
+        <div class="card__media">
+          <img src="assets/img/spark-1400.webp" srcset="assets/img/spark-800.webp 800w, assets/img/spark-1400.webp 1400w"
+               sizes="(max-width:900px) 92vw, 46vw" width="1400" height="933" loading="lazy" decoding="async"
+               alt="Jiskrová zkouška — technik přejíždí měděným kartáčem po hydroizolační fólii, kolega značí nalezenou netěsnost">
+        </div>
+        <div class="card__body">
+          <span class="card__index" aria-hidden="true">01</span>
+          <h3 class="card__title">Jiskrová zkouška</h3>
+          <p class="card__sub">Rychlá kontrola velkých ploch střechy.</p>
+          <p>
+            Odhalí malé dírky, praskliny a další netěsnosti, které pouhým okem neuvidíte.
+            Nalezené místo přístroj okamžitě ohlásí a označíme ho k opravě.
+          </p>
+        </div>
+        <span class="card__glare" aria-hidden="true"></span>
+      </article>
+
+      <article class="card tilt reveal">
+        <div class="card__media">
+          <img src="assets/img/needle-1400.webp" srcset="assets/img/needle-800.webp 800w, assets/img/needle-1400.webp 1400w"
+               sizes="(max-width:900px) 92vw, 46vw" width="1400" height="787" loading="lazy" decoding="async"
+               alt="Jehlová zkouška — technik prověřuje sondou svar střešní fólie">
+        </div>
+        <div class="card__body">
+          <span class="card__index" aria-hidden="true">02</span>
+          <h3 class="card__title">Jehlová zkouška</h3>
+          <p class="card__sub">Kontrola spojů a svarů střešní fólie.</p>
+          <p>
+            Sondou prověříme, zda je svar pevný po celé délce.
+            Odhalíme nedovařená nebo uvolněná místa, kudy by mohla pronikat voda.
+          </p>
+        </div>
+        <span class="card__glare" aria-hidden="true"></span>
+      </article>
+
+    </div>
+
+    <ol class="chain reveal" role="list">
+      <li>Zkontrolujeme plochu i svary</li>
+      <li>Poruchu označíme</li>
+      <li>Vše zdokumentujeme</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section process" id="postup">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal"><span class="eyebrow__spark" aria-hidden="true"></span>Od nálezu k ověřené opravě</p>
+      <h2 class="h2 reveal">Nález nekončí označením. Navazuje <em>oprava a kontrola.</em></h2>
+    </header>
+
+    <div class="process__grid">
+      <ol class="steps" role="list">
+        <li class="step reveal">
+          <span class="step__num">01</span>
+          <div class="step__body">
+            <h3>Posouzení vhodnosti metody</h3>
+            <p>Skladba střechy, materiál, suchý povrch a uzemnění.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">02</span>
+          <div class="step__body">
+            <h3>Systematická kontrola</h3>
+            <p>Plocha jiskrově, svarové spoje mechanickou sondou.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">03</span>
+          <div class="step__body">
+            <h3>Označení a fotodokumentace</h3>
+            <p>Každá porucha dostane jasné místo a záznam.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">04</span>
+          <div class="step__body">
+            <h3>Lokální oprava dle dohody</h3>
+            <p>Záplata, oprava svaru nebo problematického detailu.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">05</span>
+          <div class="step__body">
+            <h3>Kontrola opravy a výstup</h3>
+            <p>Ověření výsledku, protokol a doporučení dalšího postupu.</p>
+          </div>
+        </li>
+      </ol>
+
+      <aside class="process__side">
+        <figure class="frame frame--sticky reveal">
+          <img src="assets/img/repair-1400.webp" srcset="assets/img/repair-800.webp 800w, assets/img/repair-1400.webp 1400w"
+               sizes="(max-width:1000px) 92vw, 42vw" width="1400" height="933" loading="lazy" decoding="async"
+               alt="Lokální oprava — technik přivařuje záplatu horkovzdušnou pistolí, kolega zaznamenává opravu do tabletu">
+          <span class="frame__edge" aria-hidden="true"></span>
+        </figure>
+
+        <div class="output reveal">
+          <p class="output__label">Výstup pro správce nebo investora</p>
+          <ul role="list">
+            <li>Přehled vad</li>
+            <li>Fotodokumentace</li>
+            <li>Provedení opravy</li>
+            <li>Doporučení dalšího postupu</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHEN ================= -->
+<section class="section when" id="kdy">
+  <div class="wrap">
+    <header class="section__head section__head--center">
+      <h2 class="h2 reveal">Kontrola střechy je malá položka. <em>Následky zatékání ne.</em></h2>
+      <p class="lead reveal">Kdy dává kontrola největší smysl</p>
+    </header>
+
+    <ul class="when__grid" role="list">
+      <li class="chip reveal">Před převzetím nové střechy</li>
+      <li class="chip reveal">Před zakrytím fólie další vrstvou</li>
+      <li class="chip reveal">Při podezření na zatékání</li>
+      <li class="chip reveal">Po kroupách, vichřici nebo silné bouřce</li>
+      <li class="chip reveal">Po pohybu dalších profesí na střeše</li>
+      <li class="chip reveal">Po opravě nebo rekonstrukci</li>
+      <li class="chip reveal">Pravidelně jako prevence</li>
+      <li class="chip reveal">Při plnění požadavků pojistných podmínek</li>
+    </ul>
+
+    <div class="when__cta reveal">
+      <p>Sedí na váš objekt aspoň jeden bod?</p>
+      <a class="btn btn--primary" href="#kontakt">
+        Domluvit kontrolu
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq" id="faq">
+  <div class="wrap faq__grid">
+    <header class="faq__head">
+      <p class="eyebrow reveal"><span class="eyebrow__spark" aria-hidden="true"></span>Časté dotazy</p>
+      <h2 class="h2 reveal">Na co se nás ptáte <em>nejčastěji.</em></h2>
+      <p class="lead reveal">
+        Nenašli jste svůj dotaz? Zavolejte — na skladbu střechy a vhodnou metodu
+        se nejlíp odpovídá po telefonu.
+      </p>
+      <a class="btn btn--ghost reveal faq__call" href="tel:+420773938959">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        773 938 959
+      </a>
+    </header>
+
+    <div class="faq__list">
+      <details class="qa reveal">
+        <summary>Musí být střecha před zkouškou suchá?</summary>
+        <div class="qa__body">
+          <p>
+            Ano. Jiskrová zkouška potřebuje suchý povrch a funkční uzemnění. Proto je
+            prvním krokem posouzení vhodnosti metody — podíváme se na skladbu střechy,
+            materiál hydroizolace, stav povrchu a možnost uzemnění.
+          </p>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>Jaký je rozdíl mezi jiskrovou a jehlovou zkouškou?</summary>
+        <div class="qa__body">
+          <p>
+            Každá hlídá jiné riziko. <strong>Jiskrová zkouška</strong> rychle prověří velké plochy
+            a odhalí dírky, praskliny a netěsnosti, které pouhým okem neuvidíte.
+            <strong>Jehlová zkouška</strong> se soustředí na spoje a svary — sondou ověříme, jestli
+            je svar pevný po celé délce a nikde není nedovařený nebo uvolněný.
+            Na většině střech dávají smysl obě dohromady.
+          </p>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>Co dostanu jako výstup?</summary>
+        <div class="qa__body">
+          <p>
+            Přehled nalezených vad, fotodokumentaci každého místa, záznam o provedené
+            opravě a doporučení dalšího postupu. Výstup je připravený tak, aby s ním
+            mohl pracovat správce objektu i investor.
+          </p>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>Opravíte nalezenou poruchu rovnou na místě?</summary>
+        <div class="qa__body">
+          <p>
+            Dle dohody ano — záplata, oprava svaru nebo problematického detailu.
+            Opravu potom znovu zkontrolujeme, aby bylo ověřené, že místo skutečně těsní.
+            Nález tedy nekončí označením křídou.
+          </p>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>Kdy má kontrola největší smysl?</summary>
+        <div class="qa__body">
+          <p>
+            Nejčastěji před převzetím nové střechy, před zakrytím fólie další vrstvou,
+            při podezření na zatékání, po krupobití či vichřici, po pohybu jiných profesí
+            po střeše a pravidelně jako prevence. Řada správců ji zadává i kvůli
+            požadavkům pojistných podmínek.
+          </p>
+        </div>
+      </details>
+
+      <details class="qa reveal">
+        <summary>Kolik kontrola stojí a jak dlouho trvá?</summary>
+        <div class="qa__body">
+          <p>
+            Cenu i termín určuje plocha střechy, její členitost, skladba a dostupnost.
+            Napište nám rozměry a typ objektu — konkrétní nabídku pošleme zpravidla
+            do jednoho pracovního dne.
+          </p>
+          <!-- TODO ANEMA: doplnit orientační cenu (Kč/m²), minimální výjezd
+               a průměrnou rychlost kontroly (m²/den). Zvýší to konverzi poptávek. -->
+        </div>
+      </details>
+
+      <!-- TODO ANEMA: doplnit dotaz "V jakém regionu působíte?" a "Na jaké typy
+           hydroizolace metodu používáte (PVC, TPO, EPDM, asfaltové pásy)?" —
+           odpovědi neznáme, proto je zatím neuvádíme. -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="kontakt">
+  <div class="wrap contact__grid">
+
+    <div class="contact__copy">
+      <p class="eyebrow reveal"><span class="eyebrow__spark" aria-hidden="true"></span>Kontakt</p>
+      <h2 class="h2 reveal">Kontrola <em>vašeho objektu</em></h2>
+      <p class="lead reveal">
+        Napište nám nebo zavolejte. Probereme skladbu střechy, vhodnou metodu
+        a domluvíme termín kontroly.
+      </p>
+
+      <div class="people">
+        <a class="person reveal" href="tel:+420773938959">
+          <span class="person__name">Andrej Krok</span>
+          <span class="person__phone">773 938 959</span>
+          <span class="person__mail">krok@anema.cz</span>
+        </a>
+        <a class="person reveal" href="tel:+420732770094">
+          <span class="person__name">Jan Farkaš</span>
+          <span class="person__phone">732 770 094</span>
+          <span class="person__mail">farkas@anema.cz</span>
+        </a>
+      </div>
+    </div>
+
+    <form class="form reveal" name="poptavka" method="POST" action="/dekujeme.html" data-netlify="true" netlify-honeypot="firma-web">
+      <input type="hidden" name="form-name" value="poptavka">
+      <p class="hp"><label>Nevyplňujte <input name="firma-web" tabindex="-1" autocomplete="off"></label></p>
+
+      <h3 class="form__title">Nezávazná poptávka</h3>
+
+      <div class="field">
+        <label for="jmeno">Jméno a firma <span aria-hidden="true">*</span></label>
+        <input id="jmeno" name="jmeno" type="text" required autocomplete="name">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">E-mail <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required autocomplete="email" inputmode="email">
+        </div>
+        <div class="field">
+          <label for="telefon">Telefon</label>
+          <input id="telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="objekt">Objekt a lokalita</label>
+        <input id="objekt" name="objekt" type="text" placeholder="např. výrobní hala, 3 000 m², Ústí nad Labem">
+        <span class="hint">Pomůže nám odhadnout rozsah a termín.</span>
+      </div>
+
+      <div class="field">
+        <label for="zprava">Co potřebujete řešit?</label>
+        <textarea id="zprava" name="zprava" rows="4" placeholder="Podezření na zatékání, přejímka nové střechy, prevence…"></textarea>
+      </div>
+
+      <div class="field field--check">
+        <input id="souhlas" name="souhlas" type="checkbox" required>
+        <label for="souhlas">
+          Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.
+          <a href="ochrana-udaju.html">Zásady zpracování</a> <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <button class="btn btn--primary btn--block" type="submit" id="submitBtn">
+        <span class="btn__label">Odeslat poptávku</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="form__note" id="formStatus" role="status">Ozveme se zpravidla do jednoho pracovního dne.</p>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <img class="footer__logo" src="assets/img/logo-nav.webp" width="534" height="346" alt="ANEMA ROOF" loading="lazy">
+      <p>Kontrola těsnosti plochých střech<br>jiskrové a jehlové zkoušky</p>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__label">Kontakt</p>
+      <a href="tel:+420773938959">Andrej Krok — 773 938 959</a>
+      <a href="mailto:krok@anema.cz">krok@anema.cz</a>
+      <a href="tel:+420732770094">Jan Farkaš — 732 770 094</a>
+      <a href="mailto:farkas@anema.cz">farkas@anema.cz</a>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__label">Firma</p>
+      <!-- TODO ANEMA: doplnit obchodní jméno, IČO, DIČ a sídlo — na webu podnikatele
+           jsou tyto údaje povinné (§ 435 občanského zákoníku). -->
+      <p class="footer__todo">IČO a sídlo — doplnit</p>
+      <a href="ochrana-udaju.html">Zásady zpracování osobních údajů</a>
+    </div>
+  </div>
+
+  <div class="wrap footer__bottom">
+    <p>© <span id="year">2026</span> ANEMA ROOF · Roof testing &amp; inspection</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ANEMA ROOF",
+  "description": "Jiskrové a jehlové zkoušky těsnosti hydroizolace plochých střech, označení netěsností, lokální oprava a protokol.",
+  "url": "https://www.anema.cz/",
+  "logo": "https://www.anema.cz/assets/img/apple-touch-icon.png",
+  "image": "https://www.anema.cz/assets/img/og-image.jpg",
+  "telephone": "+420773938959",
+  "email": "krok@anema.cz",
+  "areaServed": { "@type": "Country", "name": "Česko" },
+  "serviceType": "Kontrola těsnosti plochých střech",
+  "knowsLanguage": "cs",
+  "contactPoint": [
+    { "@type": "ContactPoint", "name": "Andrej Krok", "telephone": "+420773938959", "email": "krok@anema.cz", "contactType": "sales", "availableLanguage": "cs" },
+    { "@type": "ContactPoint", "name": "Jan Farkaš", "telephone": "+420732770094", "email": "farkas@anema.cz", "contactType": "sales", "availableLanguage": "cs" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Musí být střecha před zkouškou suchá?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ano. Jiskrová zkouška potřebuje suchý povrch a funkční uzemnění. Prvním krokem je proto posouzení vhodnosti metody — skladba střechy, materiál hydroizolace, stav povrchu a možnost uzemnění." } },
+    { "@type": "Question", "name": "Jaký je rozdíl mezi jiskrovou a jehlovou zkouškou?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Jiskrová zkouška rychle prověří velké plochy a odhalí dírky, praskliny a netěsnosti neviditelné okem. Jehlová zkouška se soustředí na spoje a svary — sondou se ověřuje, zda je svar pevný po celé délce." } },
+    { "@type": "Question", "name": "Co dostanu jako výstup?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Přehled nalezených vad, fotodokumentaci každého místa, záznam o provedené opravě a doporučení dalšího postupu." } },
+    { "@type": "Question", "name": "Opravíte nalezenou poruchu rovnou na místě?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dle dohody ano — záplata, oprava svaru nebo problematického detailu. Opravu následně znovu zkontrolujeme, aby bylo ověřené, že místo těsní." } },
+    { "@type": "Question", "name": "Kdy má kontrola největší smysl?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Před převzetím nové střechy, před zakrytím fólie další vrstvou, při podezření na zatékání, po krupobití či vichřici, po pohybu jiných profesí po střeše a pravidelně jako prevence." } },
+    { "@type": "Question", "name": "Kolik kontrola stojí a jak dlouho trvá?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cenu i termín určuje plocha střechy, její členitost, skladba a dostupnost. Po zaslání rozměrů a typu objektu posíláme konkrétní nabídku zpravidla do jednoho pracovního dne." } }
+  ]
+}
+</script>
+
+<script src="assets/js/hero-fx.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
